@@ -1,11 +1,21 @@
 import os
 import asyncio
 import shutil
+import matplotlib.pyplot as plt
 from api import fetch_aqi_data, fetch_emissions_data
 from prediction import is_file_valid, run_aqi_prediction, run_emissions_prediction
+from plotting import plot_aqi_data, plot_emissions_data, set_current_topic
 
 os.makedirs("data/api_data", exist_ok=True)
 os.makedirs("data/SavedData", exist_ok=True)
+
+last_plotted_topic = None
+
+def close_previous_plots(current_topic):
+    global last_plotted_topic
+    if last_plotted_topic is not None and (last_plotted_topic != current_topic or last_plotted_topic == current_topic):
+        plt.close('all')
+    last_plotted_topic = current_topic
 
 def display_welcome():
     border = "🌍" * 25
@@ -37,18 +47,20 @@ def display_aqi_submenu():
     print("\n🔍 AQI Analysis Options:")
     print("  1. Fetch AQI Data")
     print("  2. Predict Next-Day PM2.5 for a City")
+    print("  3. Plot Graphs")
     print("  0. Back to Main Menu")
-    print("\n💡 Enter the number (e.g., 1, 2, 0):")
+    print("\n💡 Enter the number (e.g., 1, 2, 3, 0):")
 
 def display_emissions_submenu():
     print("\n🔍 Emissions Analysis Options:")
     print("  1. Fetch Emissions Data")
     print("  2. Predict Future CO2 Emissions")
+    print("  3. Plot Graphs")
     print("  0. Back to Main Menu")
-    print("\n💡 Enter the number (e.g., 1, 2, 0):")
+    print("\n💡 Enter the number (e.g., 1, 2, 3, 0):")
 
 def display_data_source_options(data_type):
-    print(f"\n🔍 Choose data source for {data_type} prediction:")
+    print(f"\n🔍 Choose data source for {data_type}:")
     print("  1. API Fresh Data")
     print("  2. Old Saved Data")
     print("  0. Cancel")
@@ -69,91 +81,142 @@ def get_numeric_choice(prompt, valid_choices):
 def main():
     display_welcome()
     
-    while True:
-        display_main_menu()
-        choice = get_numeric_choice("> ", ["0", "1", "2"])
-        
-        if choice == "0":
-            print("\n🌱 Exiting DataParyavaran. Goodbye! 🌱")
-            break
-        elif choice == "1":
-            while True:
-                display_aqi_submenu()
-                sub_choice = get_numeric_choice("> ", ["0", "1", "2"])
-                if sub_choice == "0":
-                    break
-                elif sub_choice == "1":
-                    try:
-                        df = asyncio.run(fetch_aqi_data())
-                        api_path = 'data/api_data/aqi_data.csv'
-                        df.to_csv(api_path, index=False)
-                        print(f"✅ Data fetched from data.gov.in API and saved to {api_path}\n")
-                        if is_file_valid(api_path):
-                            if display_overwrite_option("AQI"):
-                                saved_path = 'data/SavedData/aqi_data.csv'
-                                shutil.copy2(api_path, saved_path)
-                                print(f"✅ Saved AQI Data updated with new data at {saved_path}\n")
+    try:
+        while True:
+            display_main_menu()
+            choice = get_numeric_choice("> ", ["0", "1", "2"])
+            
+            if choice == "0":
+                print("\n🌱 Exiting DataParyavaran. Goodbye! 🌱")
+                break
+            elif choice == "1":
+                while True:
+                    display_aqi_submenu()
+                    sub_choice = get_numeric_choice("> ", ["0", "1", "2", "3"])
+                    if sub_choice == "0":
+                        break
+                    elif sub_choice == "1":
+                        try:
+                            df = asyncio.run(fetch_aqi_data())
+                            api_path = 'data/api_data/aqi_data.csv'
+                            df.to_csv(api_path, index=False)
+                            print(f"✅ Data fetched from data.gov.in API and saved to {api_path}\n")
+                            if is_file_valid(api_path):
+                                if display_overwrite_option("AQI"):
+                                    saved_path = 'data/SavedData/aqi_data.csv'
+                                    shutil.copy2(api_path, saved_path)
+                                    print(f"✅ Saved AQI Data updated with new data at {saved_path}\n")
+                            else:
+                                print(f"❌ Fetched AQI data at {api_path} is empty or invalid. Cannot use this data.\n")
+                        except Exception as e:
+                            print(f"❌ Failed to fetch AQI data: {str(e)}\n")
+                    elif sub_choice == "2":
+                        display_data_source_options("AQI")
+                        source_choice = get_numeric_choice("> ", ["0", "1", "2"])
+                        if source_choice == "0":
+                            continue
+                        if source_choice == "1":
+                            data_path = 'data/api_data/aqi_data.csv'
                         else:
-                            print(f"❌ Fetched AQI data at {api_path} is empty or invalid. Cannot use this data.\n")
-                    except Exception as e:
-                        print(f"❌ Failed to fetch AQI data: {str(e)}\n")
-                elif sub_choice == "2":
-                    display_data_source_options("AQI")
-                    source_choice = get_numeric_choice("> ", ["0", "1", "2"])
-                    if source_choice == "0":
-                        continue
-                    if source_choice == "1":
-                        data_path = 'data/api_data/aqi_data.csv'
-                    else:
-                        data_path = 'data/SavedData/aqi_data.csv'
-                    
-                    if not os.path.exists(data_path):
-                        print(f"❌ Data file not found at {data_path}. Please fetch AQI data first (Option 1).\n")
-                        continue
-                    if os.path.getsize(data_path) == 0:
-                        print(f"❌ Data file at {data_path} is empty. Please fetch AQI data again (Option 1).\n")
-                        continue
-                    
-                    run_aqi_prediction(data_path)
-        elif choice == "2":
-            while True:
-                display_emissions_submenu()
-                sub_choice = get_numeric_choice("> ", ["0", "1", "2"])
-                if sub_choice == "0":
-                    break
-                elif sub_choice == "1":
-                    try:
-                        df = asyncio.run(fetch_emissions_data())
-                        api_path = 'data/api_data/emissions_data.csv'
-                        df.to_csv(api_path, index=False)
-                        print(f"✅ Data fetched from data.gov.in API and saved to {api_path}\n")
-                        if is_file_valid(api_path):
-                            if display_overwrite_option("Emissions"):
-                                saved_path = 'data/SavedData/emissions_data.csv'
-                                shutil.copy2(api_path, saved_path)
-                                print(f"✅ Saved Emissions Data updated with new data at {saved_path}\n")
+                            data_path = 'data/SavedData/aqi_data.csv'
+                        
+                        if not os.path.exists(data_path):
+                            print(f"❌ Data file not found at {data_path}. Please fetch AQI data first (Option 1).\n")
+                            continue
+                        if os.path.getsize(data_path) == 0:
+                            print(f"❌ Data file at {data_path} is empty. Please fetch AQI data again (Option 1).\n")
+                            continue
+                        
+                        run_aqi_prediction(data_path)
+                    elif sub_choice == "3":
+                        display_data_source_options("AQI")
+                        source_choice = get_numeric_choice("> ", ["0", "1", "2"])
+                        if source_choice == "0":
+                            continue
+                        if source_choice == "1":
+                            data_path = 'data/api_data/aqi_data.csv'
                         else:
-                            print(f"❌ Fetched Emissions data at {api_path} is empty or invalid. Cannot use this data.\n")
-                    except Exception as e:
-                        print(f"❌ Failed to fetch Emissions data: {str(e)}\n")
-                elif sub_choice == "2":
-                    display_data_source_options("Emissions")
-                    source_choice = get_numeric_choice("> ", ["0", "1", "2"])
-                    if source_choice == "0":
-                        continue
-                    if source_choice == "1":
-                        data_path = 'data/api_data/emissions_data.csv'
-                    else:
-                        data_path = 'data/SavedData/emissions_data.csv'
-                    
-                    if not os.path.exists(data_path):
-                        print(f"❌ Data file not found at {data_path}. Please fetch Emissions data first (Option 1).\n")
-                        continue
-                    if os.path.getsize(data_path) == 0:
-                        print(f"❌ Data file at {data_path} is empty. Please fetch Emissions data again (Option 1).\n")
-                        continue
-                    
-                    run_emissions_prediction(data_path)
+                            data_path = 'data/SavedData/aqi_data.csv'
+                        
+                        if not os.path.exists(data_path):
+                            print(f"❌ Data file not found at {data_path}. Please fetch AQI data first (Option 1).\n")
+                            continue
+                        if os.path.getsize(data_path) == 0:
+                            print(f"❌ Data file at {data_path} is empty. Please fetch AQI data again (Option 1).\n")
+                            continue
+                        if not is_file_valid(data_path):
+                            print(f"❌ Data file at {data_path} contains no valid data. Please fetch AQI data again (Option 1).\n")
+                            continue
+                        
+                        close_previous_plots("AQI")
+                        set_current_topic("AQI")
+                        
+                        plot_aqi_data(data_path)
+            elif choice == "2":
+                while True:
+                    display_emissions_submenu()
+                    sub_choice = get_numeric_choice("> ", ["0", "1", "2", "3"])
+                    if sub_choice == "0":
+                        break
+                    elif sub_choice == "1":
+                        try:
+                            df = asyncio.run(fetch_emissions_data())
+                            api_path = 'data/api_data/emissions_data.csv'
+                            df.to_csv(api_path, index=False)
+                            print(f"✅ Data fetched from data.gov.in API and saved to {api_path}\n")
+                            if is_file_valid(api_path):
+                                if display_overwrite_option("Emissions"):
+                                    saved_path = 'data/SavedData/emissions_data.csv'
+                                    shutil.copy2(api_path, saved_path)
+                                    print(f"✅ Saved Emissions Data updated with new data at {saved_path}\n")
+                            else:
+                                print(f"❌ Fetched Emissions data at {api_path} is empty or invalid. Cannot use this data.\n")
+                        except Exception as e:
+                            print(f"❌ Failed to fetch Emissions data: {str(e)}\n")
+                    elif sub_choice == "2":
+                        display_data_source_options("Emissions")
+                        source_choice = get_numeric_choice("> ", ["0", "1", "2"])
+                        if source_choice == "0":
+                            continue
+                        if source_choice == "1":
+                            data_path = 'data/api_data/emissions_data.csv'
+                        else:
+                            data_path = 'data/SavedData/emissions_data.csv'
+                        
+                        if not os.path.exists(data_path):
+                            print(f"❌ Data file not found at {data_path}. Please fetch Emissions data first (Option 1).\n")
+                            continue
+                        if os.path.getsize(data_path) == 0:
+                            print(f"❌ Data file at {data_path} is empty. Please fetch Emissions data again (Option 1).\n")
+                            continue
+                        
+                        run_emissions_prediction(data_path)
+                    elif sub_choice == "3":
+                        display_data_source_options("Emissions")
+                        source_choice = get_numeric_choice("> ", ["0", "1", "2"])
+                        if source_choice == "0":
+                            continue
+                        if source_choice == "1":
+                            data_path = 'data/api_data/emissions_data.csv'
+                        else:
+                            data_path = 'data/SavedData/emissions_data.csv'
+                        
+                        if not os.path.exists(data_path):
+                            print(f"❌ Data file not found at {data_path}. Please fetch Emissions data first (Option 1).\n")
+                            continue
+                        if os.path.getsize(data_path) == 0:
+                            print(f"❌ Data file at {data_path} is empty. Please fetch Emissions data again (Option 1).\n")
+                            continue
+                        if not is_file_valid(data_path):
+                            print(f"❌ Data file at {data_path} contains no valid data. Please fetch Emissions data again (Option 1).\n")
+                            continue
+                        
+                        close_previous_plots("Emissions")
+                        set_current_topic("Emissions")
+                        
+                        plot_emissions_data(data_path)
+    finally:
+        plt.close('all')
 
 if __name__ == '__main__':
     main()
