@@ -1,1 +1,101 @@
-
+country,state,city,station,last_update,latitude,longitude,pollutant_id,min_value,max_value,avg_value
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",13-05-2025 23:00:00,14.675886,77.593027,SO2,13,15,14
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",13-05-2025 23:00:00,14.675886,77.593027,OZONE,8,32,24
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",13-05-2025 23:00:00,13.204880,79.097889,NO2,16,26,23
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",13-05-2025 23:00:00,14.465052,78.824187,PM10,32,124,50
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",13-05-2025 23:00:00,14.465052,78.824187,NO2,10,16,12
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",13-05-2025 23:00:00,16.9872867,81.7363176,NH3,6,16,9
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)",13-05-2025 23:00:00,13.67,79.35,NH3,1,2,1
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)",13-05-2025 23:00:00,13.67,79.35,SO2,6,16,10
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",13-05-2025 23:00:00,13.615387,79.409230,NO2,7,15,11
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",13-05-2025 23:00:00,13.615387,79.409230,CO,16,22,18
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",13-05-2025 23:00:00,17.72,83.3,NH3,1,18,3
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB",13-05-2025 23:00:00,27.103358,93.679645,SO2,NA,NA,NA
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB",13-05-2025 23:00:00,27.103358,93.679645,OZONE,4,4,4
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA",13-05-2025 23:00:00,26.071318,91.87488,PM2.5,NA,NA,NA
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA",13-05-2025 23:00:00,26.071318,91.87488,OZONE,16,62,35
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB",13-05-2025 23:00:00,26.80365,84.51954,PM10,NA,NA,NA
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB",13-05-2025 23:00:00,26.80365,84.51954,OZONE,17,29,24
+India,Bihar,Bhagalpur,"DM Office_Kachari Chowk, Bhagalpur - BSPCB",13-05-2025 23:00:00,25.251013,86.989001,NH3,1,2,1
+India,Bihar,Bhagalpur,"Mayaganj, Bhagalpur - BSPCB",13-05-2025 23:00:00,25.265194,87.012947,PM2.5,8,233,66
+India,Bihar,Bihar Sharif,"D M Colony, Bihar Sharif - BSPCB",13-05-2025 23:00:00,25.204762,85.514960,PM2.5,NA,NA,NA
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA",13-05-2025 23:00:00,26.10887,91.589544,PM2.5,27,290,77
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA",13-05-2025 23:00:00,26.187500,91.744194,PM2.5,9,44,27
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA",13-05-2025 23:00:00,26.187500,91.744194,PM10,11,34,22
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA",13-05-2025 23:00:00,26.349082,92.68449,NO2,NA,NA,NA
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA",13-05-2025 23:00:00,26.446912,91.439057,PM2.5,15,52,30
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",13-05-2025 23:00:00,16.536107,80.594233,SO2,14,20,16
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",13-05-2025 23:00:00,16.536107,80.594233,CO,26,45,35
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",13-05-2025 23:00:00,16.486692,80.699436,OZONE,42,66,52
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",13-05-2025 23:00:00,16.509717,80.612222,PM10,69,103,80
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",13-05-2025 23:00:00,16.554731,80.649110,CO,38,69,43
+India,Bihar,Buxar,"Charitra Van, Buxar - BSPCB",13-05-2025 23:00:00,25.567520,83.966379,PM10,39,185,76
+India,Bihar,Buxar,"Charitra Van, Buxar - BSPCB",13-05-2025 23:00:00,25.567520,83.966379,SO2,2,13,8
+India,Bihar,Buxar,"Charitra Van, Buxar - BSPCB",13-05-2025 23:00:00,25.567520,83.966379,CO,26,28,27
+India,Bihar,Chhapra,"Darshan Nagar, Chhapra - BSPCB",13-05-2025 23:00:00,25.7808257,84.7446768,NO2,112,127,115
+India,Bihar,Chhapra,"Darshan Nagar, Chhapra - BSPCB",13-05-2025 23:00:00,25.7808257,84.7446768,OZONE,9,56,35
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB",13-05-2025 23:00:00,26.146529,87.454184,NO2,7,80,22
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB",13-05-2025 23:00:00,26.146529,87.454184,SO2,21,41,34
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB",13-05-2025 23:00:00,25.5626095,84.663264,SO2,8,10,9
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB",13-05-2025 23:00:00,24.75746,84.366208,OZONE,6,94,53
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA",13-05-2025 23:00:00,26.446912,91.439057,NO2,2,7,3
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA",13-05-2025 23:00:00,26.446912,91.439057,SO2,1,7,3
+India,Assam,Silchar,"Tarapur, Silchar - PCBA",13-05-2025 23:00:00,24.82827,92.79525,NO2,15,29,23
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA",13-05-2025 23:00:00,26.987634,94.636574,SO2,9,12,10
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",13-05-2025 23:00:00,16.5150833,80.5181667,NO2,31,45,38
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",13-05-2025 23:00:00,16.5150833,80.5181667,SO2,11,33,15
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",13-05-2025 23:00:00,16.5150833,80.5181667,CO,1,126,60
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",13-05-2025 23:00:00,16.5150833,80.5181667,OZONE,20,90,51
+India,Bihar,Gaya,"SFTI Kusdihra, Gaya - BSPCB",13-05-2025 23:00:00,24.762518,84.982348,PM10,75,103,89
+India,Bihar,Hajipur,"Industrial Area, Hajipur - BSPCB",13-05-2025 23:00:00,25.697189,85.245900,OZONE,47,195,135
+India,Bihar,Katihar,"Mirchaibari, Katihar - BSPCB",13-05-2025 23:00:00,25.560083,87.553265,PM2.5,7,58,27
+India,Bihar,Kishanganj,"SDM Office_Khagra, Kishanganj - BSPCB",13-05-2025 23:00:00,26.0881305,87.93840336,SO2,7,10,8
+India,Bihar,Manguraha,"Forest Rest House, Manguraha - BSPCB",13-05-2025 23:00:00,27.308328,84.531742,NO2,NA,NA,NA
+India,Bihar,Motihari,"Gandak Colony, Motihari - BSPCB",13-05-2025 23:00:00,26.63086,84.90051,PM2.5,NA,NA,NA
+India,Bihar,Motihari,"Gandak Colony, Motihari - BSPCB",13-05-2025 23:00:00,26.63086,84.90051,NH3,3,3,3
+India,Bihar,Motihari,"Gandak Colony, Motihari - BSPCB",13-05-2025 23:00:00,26.63086,84.90051,SO2,NA,NA,NA
+India,Chhattisgarh,Korba,"Urja Nagar, Korba - CECB",13-05-2025 23:00:00,22.348441,82.549611,PM10,48,267,119
+India,Chhattisgarh,Korba,"Urja Nagar, Korba - CECB",13-05-2025 23:00:00,22.348441,82.549611,SO2,5,8,6
+India,Chhattisgarh,Korba,"Urja Nagar, Korba - CECB",13-05-2025 23:00:00,22.348441,82.549611,CO,20,72,29
+India,Chhattisgarh,Kunjemura,"OP Jindal School, Kunjemura - CECB",13-05-2025 23:00:00,22.126650,83.483212,OZONE,8,9,8
+India,Chhattisgarh,Milupara,"Govt. Higher Secondary School, Milupara - CECB",13-05-2025 23:00:00,22.1910172,83.5197009,PM2.5,NA,NA,NA
+India,Chhattisgarh,Milupara,"Govt. Higher Secondary School, Milupara - CECB",13-05-2025 23:00:00,22.1910172,83.5197009,NO2,NA,NA,NA
+India,Chhattisgarh,Raipur,"AIIMS, Raipur - CECB",13-05-2025 23:00:00,21.258815,81.578979,PM2.5,29,52,38
+India,Bihar,Muzaffarpur,"Muzaffarpur Collectorate, Muzaffarpur - BSPCB",13-05-2025 23:00:00,26.1209,85.3647,SO2,4,8,6
+India,Bihar,Patna,"DRM Office Danapur, Patna - BSPCB",13-05-2025 23:00:00,25.586562,85.043586,CO,18,78,49
+India,Bihar,Patna,"Govt. High School Shikarpur, Patna - BSPCB",13-05-2025 23:00:00,25.592539,85.227158,PM2.5,31,131,70
+India,Bihar,Patna,"Govt. High School Shikarpur, Patna - BSPCB",13-05-2025 23:00:00,25.592539,85.227158,NO2,5,10,6
+India,Bihar,Patna,"Govt. High School Shikarpur, Patna - BSPCB",13-05-2025 23:00:00,25.592539,85.227158,NH3,7,9,8
+India,Bihar,Patna,"Govt. High School Shikarpur, Patna - BSPCB",13-05-2025 23:00:00,25.592539,85.227158,SO2,2,63,17
+India,Bihar,Motihari,"Gandak Colony, Motihari - BSPCB",13-05-2025 23:00:00,26.63086,84.90051,OZONE,10,12,11
+India,Bihar,Munger,"Town Hall, Munger - BSPCB",13-05-2025 23:00:00,25.376776,86.471523,PM2.5,NA,NA,NA
+India,Bihar,Muzaffarpur,"Buddha Colony, Muzaffarpur - BSPCB",13-05-2025 23:00:00,26.11442,85.39813,PM2.5,31,78,50
+India,Bihar,Muzaffarpur,"Buddha Colony, Muzaffarpur - BSPCB",13-05-2025 23:00:00,26.11442,85.39813,NO2,4,19,9
+India,Bihar,Muzaffarpur,"Buddha Colony, Muzaffarpur - BSPCB",13-05-2025 23:00:00,26.11442,85.39813,NH3,2,4,3
+India,Bihar,Muzaffarpur,"Muzaffarpur Collectorate, Muzaffarpur - BSPCB",13-05-2025 23:00:00,26.1209,85.3647,PM2.5,NA,NA,NA
+India,Bihar,Purnia,"Mariam Nagar, Purnia - BSPCB",13-05-2025 23:00:00,25.366336,87.117468,CO,3,46,35
+India,Bihar,Purnia,"Mariam Nagar, Purnia - BSPCB",13-05-2025 23:00:00,25.366336,87.117468,OZONE,16,50,21
+India,Bihar,Rajgir,"Dangi Tola, Rajgir - BSPCB",13-05-2025 23:00:00,25.03280,85.41948,OZONE,32,36,33
+India,Bihar,Saharsa,"Police Line, Saharsa - BSPCB",13-05-2025 23:00:00,25.892357,86.590325,CO,1,86,57
+India,Chhattisgarh,Bhilai,"Hathkhoj, Bhilai - CECB",13-05-2025 23:00:00,21.224231,81.408350,CO,12,50,24
+India,Chhattisgarh,Bilaspur,"Mangala, Bilaspur - NTPC",13-05-2025 23:00:00,22.08815,82.13737,SO2,NA,NA,NA
+India,Chhattisgarh,Chhal,"Nawapara SECL Colony, Chhal - CECB",13-05-2025 23:00:00,22.118125,83.140608,NH3,7,7,7
+India,Bihar,Patna,"Muradpur, Patna - BSPCB",13-05-2025 23:00:00,25.619651,85.147382,OZONE,5,39,22
+India,Bihar,Patna,"Samanpura, Patna - BSPCB",13-05-2025 23:00:00,25.596727,85.085624,NO2,36,54,44
+India,Bihar,Patna,"Samanpura, Patna - BSPCB",13-05-2025 23:00:00,25.596727,85.085624,NH3,5,7,6
+India,Bihar,Patna,"Samanpura, Patna - BSPCB",13-05-2025 23:00:00,25.596727,85.085624,SO2,2,3,2
+India,Bihar,Siwan,"Chitragupta Nagar, Siwan - BSPCB",13-05-2025 23:00:00,26.2271665,84.3570427,NO2,NA,NA,NA
+India,Chandigarh,Chandigarh,"Sector 22, Chandigarh - CPCC",13-05-2025 23:00:00,30.735567,76.775714,PM10,39,139,70
+India,Chhattisgarh,Bhilai,"32Bungalows, Bhilai - CECB",13-05-2025 23:00:00,21.194815,81.314770,SO2,NA,NA,NA
+India,Chhattisgarh,Bhilai,"32Bungalows, Bhilai - CECB",13-05-2025 23:00:00,21.194815,81.314770,CO,14,34,21
+India,Delhi,Delhi,"Jahangirpuri, Delhi - DPCC",13-05-2025 23:00:00,28.732820,77.170633,SO2,6,37,17
+India,Delhi,Delhi,"Jawaharlal Nehru Stadium, Delhi - DPCC",13-05-2025 23:00:00,28.580280,77.233829,PM2.5,5,103,26
+India,Delhi,Delhi,"Jawaharlal Nehru Stadium, Delhi - DPCC",13-05-2025 23:00:00,28.580280,77.233829,PM10,64,177,110
+India,Delhi,Delhi,"Jawaharlal Nehru Stadium, Delhi - DPCC",13-05-2025 23:00:00,28.580280,77.233829,NO2,34,88,55
+India,Delhi,Delhi,"Jawaharlal Nehru Stadium, Delhi - DPCC",13-05-2025 23:00:00,28.580280,77.233829,OZONE,29,99,58
+India,Delhi,Delhi,"Lodhi Road, Delhi - IITM",13-05-2025 23:00:00,28.588333,77.221667,PM10,43,132,89
+India,Delhi,Delhi,"Lodhi Road, Delhi - IITM",13-05-2025 23:00:00,28.588333,77.221667,NO2,24,159,66
+India,Delhi,Delhi,"Lodhi Road, Delhi - IMD",13-05-2025 23:00:00,28.5918245,77.2273074,PM2.5,7,110,40
+India,Delhi,Delhi,"Lodhi Road, Delhi - IMD",13-05-2025 23:00:00,28.5918245,77.2273074,NO2,14,49,24
+India,Delhi,Delhi,"Alipur, Delhi - DPCC",13-05-2025 23:00:00,28.815329,77.153010,OZONE,11,65,36
+India,Delhi,Delhi,"Anand Vihar, Delhi - DPCC",13-05-2025 23:00:00,28.647622,77.3158090,PM2.5,18,85,45
