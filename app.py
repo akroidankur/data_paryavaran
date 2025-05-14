@@ -28,7 +28,7 @@ def display_welcome():
     print("Focus: Air Quality and Emissions.".center(50))
     print('\n')
     print("📡 Data Source: https://api.data.gov.in (Indian Government Open Data)".center(50))
-    print("\n🌿 Team: NDJ Protocol 🌿".center(50))
+    print("\n🌿 Team: NDJ_Protocol 🌿".center(50))
     print("👥 Members:".center(50))
     print("  - Naija Sona Brahma (Class 12 - Science)".center(50))
     print("  - Debaniv Talukdar (Class 12 - Commerce)".center(50))
