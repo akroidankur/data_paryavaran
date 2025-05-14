@@ -53,8 +53,8 @@ This project was developed for the **Climate Data Analysis Challenge (14-19 yrs)
 
 ### Setup Instructions
 1. **Unzip the Project Folder:**
-   - Extract the `DataParyavaran.zip` file to a folder on your computer (e.g., `C:\DataParyavaran` on Windows or `Documents/DataParyavaran` on macOS/Linux).
-   - Move to the extracted `DataParyavaran` folder.
+   - Extract the `data_paryavaran.zip` file to a folder on your computer (e.g., `C:\data_paryavaran` on Windows or `Documents/data_paryavaran` on macOS/Linux).
+   - Move to the extracted `data_paryavaran` folder.
 
 2. **Note:** A `requirements.txt` file is already included in the folder with the following content:
    ```
@@ -69,12 +69,12 @@ This project was developed for the **Climate Data Analysis Challenge (14-19 yrs)
 
 #### Windows
 1. Ensure Python is installed on your computer. (Download and install Python 3.8 or higher from [python.org](https://www.python.org/downloads/) if not already installed.)
-2. Double-click the `setup.bat` file in the `DataParyavaran` folder to install all required libraries globally.
+2. Double-click the `setup.bat` file in the `data_paryavaran` folder to install all required libraries globally.
    *Note:* The `setup.bat` file contains:
    ```
    pip install -r requirements.txt
    ```
-3. To run the application, double-click the `run.bat` file in the `DataParyavaran` folder, or open a Command Prompt in the folder and type:
+3. To run the application, double-click the `run.bat` file in the `data_paryavaran` folder, or open a Command Prompt in the folder and type:
    ```
    python app.py
    ```
@@ -96,7 +96,7 @@ This project was developed for the **Climate Data Analysis Challenge (14-19 yrs)
 
 #### macOS
 1. Open the Terminal application (search for "Terminal" in Spotlight).
-2. Navigate to the `DataParyavaran` folder using the Finder, then drag the folder into the Terminal and press Enter to set the path.
+2. Navigate to the `data_paryavaran` folder using the Finder, then drag the folder into the Terminal and press Enter to set the path.
 3. Create and activate a virtual environment:
    ```
    python3 -m venv venv
